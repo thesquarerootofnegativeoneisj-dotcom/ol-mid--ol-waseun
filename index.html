@@ -4,112 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ọlámidé & Olúwaseunfúnmi</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 body{
-background:#050505;
-font-family:'Cormorant Garamond',serif;
-overflow:hidden;
-height:100vh;
+  background:#0D0D0D;
+  font-family:'Cormorant Garamond', serif;
+  overflow:hidden;
+  height:100vh;
 }
-/* ACCESS SCREEN */
+/* LANDING PAGE */
 #landing{
-position:fixed;
-inset:0;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:#050505;
-z-index:100;
-text-align:center;
-padding:30px;
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:#0D0D0D;
+  z-index:100;
+  transition:1.5s ease;
 }
 h1{
-color:#d4af37;
-font-size:3rem;
-line-height:1.2;
-font-weight:600;
+  color:#D8C19A;
+  font-size:4rem;
+  font-weight:600;
+  line-height:1.1;
 }
 .subtitle{
-margin-top:15px;
-color:#f1df9f;
-letter-spacing:4px;
-font-size:12px;
-text-transform:uppercase;
+  margin-top:25px;
+  color:#D8C19A;
+  letter-spacing:8px;
+  font-size:14px;
+  opacity:.8;
+}
+.date{
+  margin-top:18px;
+  color:#D8C19A;
+  letter-spacing:3px;
+  font-size:14px;
+  opacity:.7;
 }
 button{
-margin-top:40px;
-padding:16px 38px;
-background:transparent;
-border:1px solid #d4af37;
-border-radius:50px;
-color:#d4af37;
-font-size:13px;
-letter-spacing:3px;
-cursor:pointer;
+  margin-top:50px;
+  padding:18px 55px;
+  border-radius:20px;
+  border:2px solid #B8893C;
+  background:linear-gradient(
+    180deg,
+    #F5EBDD,
+    #E8D7BC
+  );
+  color:#5A4420;
+  font-size:18px;
+  letter-spacing:4px;
+  cursor:pointer;
+  font-family:'Cormorant Garamond', serif;
 }
+/* HEARTS */
+.heart{
+  position:absolute;
+  color:#D8C19A;
+  opacity:.12;
+  font-size:18px;
+  animation:float 20s linear infinite;
+}
+@keyframes float{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-120vh);
+  }
+}
+.h1{left:5%;bottom:-20px;}
+.h2{left:15%;bottom:-120px;}
+.h3{left:30%;bottom:-200px;}
+.h4{left:70%;bottom:-100px;}
+.h5{left:85%;bottom:-50px;}
+.h6{left:95%;bottom:-180px;}
+.h7{left:55%;bottom:-250px;}
+.h8{left:40%;bottom:-140px;}
 /* INVITATION */
 #invitation{
-position:fixed;
-inset:0;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#050505;
-opacity:0;
-visibility:hidden;
-transition:2s ease;
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0D0D0D;
+  opacity:0;
+  visibility:hidden;
+  transition:2s ease;
 }
 #invitation img{
-max-width:95%;
-max-height:95vh;
-object-fit:contain;
-box-shadow:0 0 80px rgba(212,175,55,.15);
-border-radius:12px;
+  width:100%;
+  max-width:700px;
+  max-height:100vh;
+  object-fit:contain;
+  transform:scale(.85);
+  transition:2.5s ease;
 }
 .show{
-opacity:1 !important;
-visibility:visible !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.show img{
+  transform:scale(1) !important;
 }
 .hide{
-opacity:0;
-visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+}
+.now-playing{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  color:#D8C19A;
+  font-size:14px;
+  opacity:.7;
+  display:none;
 }
 </style>
 </head>
 <body>
 <audio id="music" loop>
-<source src="music.mp3" type="audio/mp3">
+  <source src="music.mp3" type="audio/mp3">
 </audio>
 <div id="landing">
-<h1>
-Ọlámidé<br>
-introduces<br>
-Olúwaseunfúnmi
-</h1>
-<div class="subtitle">
-Introduction Ceremony
-</div>
-<button onclick="openInvitation()">
-ACCESS INVITATION
-</button>
+  <div class="heart h1">♥️</div>
+  <div class="heart h2">♥️</div>
+  <div class="heart h3">♥️</div>
+  <div class="heart h4">♥️</div>
+  <div class="heart h5">♥️</div>
+  <div class="heart h6">♥️</div>
+  <div class="heart h7">♥️</div>
+  <div class="heart h8">♥️</div>
+  <h1>
+    Ọlámidé<br>
+    &<br>
+    Olúwaseunfúnmi
+  </h1>
+  <div class="subtitle">
+    INTRODUCTION CEREMONY
+  </div>
+  <div class="date">
+    June 27, 2026
+  </div>
+  <button onclick="openInvitation()">
+    ACCESS INVITATION
+  </button>
 </div>
 <div id="invitation">
-<img src="invitation.jpeg" alt="Invitation">
+  <img src="invitation.jpeg" alt="Invitation">
+</div>
+<div class="now-playing" id="playing">
+  ♪ Now Playing
 </div>
 <script>
 function openInvitation(){
-document.getElementById("music").play();
-document.getElementById("landing").classList.add("hide");
-setTimeout(()=>{
-document.getElementById("invitation").classList.add("show");
-},800);
+  const music = document.getElementById("music");
+  music.play();
+  document.getElementById("landing").classList.add("hide");
+  setTimeout(() => {
+    document.getElementById("invitation").classList.add("show");
+    document.getElementById("playing").style.display = "block";
+  }, 1200);
 }
 </script>
 </body>
