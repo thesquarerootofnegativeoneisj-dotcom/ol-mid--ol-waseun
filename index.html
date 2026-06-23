@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ọlámidé & Olúwaseunfúnmi</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{
 margin:0;
@@ -13,136 +13,73 @@ box-sizing:border-box;
 }
 body{
 background:#050505;
+font-family:'Cormorant Garamond',serif;
 overflow:hidden;
 height:100vh;
-font-family:'Montserrat',sans-serif;
-color:white;
 }
 /* ACCESS SCREEN */
 #landing{
 position:fixed;
 inset:0;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 background:#050505;
 z-index:100;
 text-align:center;
 padding:30px;
 }
-.title{
-font-family:'Cormorant Garamond',serif;
+h1{
+color:#d4af37;
 font-size:3rem;
 line-height:1.2;
-color:#d4af37;
-}
-.subtitle{
-margin-top:20px;
-letter-spacing:4px;
-font-size:12px;
-color:#e7d59b;
-text-transform:uppercase;
-}
-.access-btn{
-margin-top:40px;
-padding:16px 40px;
-background:transparent;
-border:1px solid #d4af37;
-color:#d4af37;
-letter-spacing:3px;
-font-size:12px;
-border-radius:50px;
-cursor:pointer;
-}
-.access-btn:hover{
-background:#d4af37;
-color:black;
-}
-/* MAIN */
-#experience{
-display:none;
-height:100vh;
-position:relative;
-}
-/* RINGS */
-.rings{
-position:absolute;
-top:70px;
-left:50%;
-transform:translateX(-50%);
-font-size:55px;
-opacity:0;
-transition:1.5s;
-}
-/* ENVELOPE */
-.envelope-wrapper{
-position:absolute;
-left:50%;
-bottom:-400px;
-transform:translateX(-50%);
-transition:2s ease;
-}
-.envelope{
-width:320px;
-height:220px;
-background:#c7a64a;
-position:relative;
-overflow:hidden;
-box-shadow:0 0 30px rgba(212,175,55,.3);
-}
-.flap{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#d9b95a;
-clip-path:polygon(0 0,100% 0,50% 55%);
-transform-origin:top;
-transition:1.5s ease;
-z-index:5;
-}
-.card{
-position:absolute;
-width:280px;
-left:20px;
-height:370px;
-background:#f8f3e7;
-color:#222;
-padding:40px 25px;
-text-align:center;
-bottom:-330px;
-transition:2.5s ease;
-font-family:'Cormorant Garamond',serif;
-}
-.card h1{
-font-size:2.1rem;
-color:#8a6a14;
-line-height:1.2;
-}
-.card p{
-margin-top:18px;
-line-height:1.8;
-font-size:1.15rem;
-}
-.gold{
-color:#8a6a14;
 font-weight:600;
 }
-/* particles */
-.sparkle{
-position:absolute;
-width:4px;
-height:4px;
-background:#d4af37;
-border-radius:50%;
-animation:float 6s infinite;
-opacity:.5;
+.subtitle{
+margin-top:15px;
+color:#f1df9f;
+letter-spacing:4px;
+font-size:12px;
+text-transform:uppercase;
 }
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-100vh);}
+button{
+margin-top:40px;
+padding:16px 38px;
+background:transparent;
+border:1px solid #d4af37;
+border-radius:50px;
+color:#d4af37;
+font-size:13px;
+letter-spacing:3px;
+cursor:pointer;
+}
+/* INVITATION */
+#invitation{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050505;
+opacity:0;
+visibility:hidden;
+transition:2s ease;
+}
+#invitation img{
+max-width:95%;
+max-height:95vh;
+object-fit:contain;
+box-shadow:0 0 80px rgba(212,175,55,.15);
+border-radius:12px;
+}
+.show{
+opacity:1 !important;
+visibility:visible !important;
+}
+.hide{
+opacity:0;
+visibility:hidden;
 }
 </style>
 </head>
@@ -151,76 +88,28 @@ opacity:.5;
 <source src="music.mp3" type="audio/mp3">
 </audio>
 <div id="landing">
-<div class="title">
+<h1>
 Ọlámidé<br>
 introduces<br>
 Olúwaseunfúnmi
-</div>
+</h1>
 <div class="subtitle">
 Introduction Ceremony
 </div>
-<button class="access-btn" onclick="startInvitation()">
+<button onclick="openInvitation()">
 ACCESS INVITATION
 </button>
 </div>
-<div id="experience">
-<div class="rings" id="rings">
-💍💍
-</div>
-<div class="envelope-wrapper" id="envelope">
-<div class="envelope">
-<div class="flap" id="flap"></div>
-<div class="card" id="card">
-<p class="gold">
-The Families of
-</p>
-<h1>
-Ọlámidé<br>
-and<br>
-Olúwaseunfúnmi
-</h1>
-<p>
-cordially invite you<br>
-to their Introduction Ceremony
-</p>
-<p class="gold">
-June 27, 2026<br>
-12:00 PM
-</p>
-<p>
-29 Shórèmékún Street<br>
-Lagos, Nigeria
-</p>
-</div>
-</div>
-</div>
+<div id="invitation">
+<img src="invitation.jpg" alt="Invitation">
 </div>
 <script>
-function startInvitation(){
-document.getElementById('landing').style.display='none';
-document.getElementById('experience').style.display='block';
-const music=document.getElementById('music');
-music.play().catch(()=>{});
-for(let i=0;i<40;i++){
-let s=document.createElement('div');
-s.className='sparkle';
-s.style.left=Math.random()*100+'vw';
-s.style.top=Math.random()*100+'vh';
-s.style.animationDuration=(4+Math.random()*6)+'s';
-document.body.appendChild(s);
-}
+function openInvitation(){
+document.getElementById("music").play();
+document.getElementById("landing").classList.add("hide");
 setTimeout(()=>{
-document.getElementById('rings').style.opacity='1';
-},500);
-setTimeout(()=>{
-document.getElementById('envelope').style.bottom='120px';
-},1000);
-setTimeout(()=>{
-document.getElementById('flap').style.transform='rotateX(180deg)';
-},2800);
-setTimeout(()=>{
-document.getElementById('card').style.bottom='40px';
-},3500);
+document.getElementById("invitation").classList.add("show");
+},800);
 }
 </script>
 </body>
