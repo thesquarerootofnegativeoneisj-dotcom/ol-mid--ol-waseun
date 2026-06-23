@@ -11,16 +11,13 @@
   padding:0;
   box-sizing:border-box;
 }
-
 body{
   background:#0D0D0D;
   font-family:'Cormorant Garamond', serif;
   overflow:hidden;
   height:100vh;
 }
-
 /* LANDING PAGE */
-
 #landing{
   position:fixed;
   inset:0;
@@ -33,37 +30,33 @@ body{
   z-index:100;
   transition:1.5s ease;
 }
-
-/* decorative corners */
-
+/* Decorative flowers */
 #landing::before,
 #landing::after{
   content:"❀";
   position:absolute;
   color:#B8893C;
   opacity:.18;
-  font-size:120px;
+  font-size:90px;
 }
-
 #landing::before{
   top:30px;
   left:30px;
 }
-
 #landing::after{
   bottom:30px;
   right:30px;
 }
-
 h1{
   color:#D8C19A;
-  font-size:4rem;
+  font-size:clamp(2.5rem, 9vw, 4rem);
   font-weight:600;
-  line-height:1.08;
+  line-height:1.1;
   letter-spacing:.5px;
+  width:90%;
+  margin:auto;
   text-shadow:none;
 }
-
 .subtitle{
   margin-top:28px;
   color:#D8C19A;
@@ -71,7 +64,6 @@ h1{
   font-size:13px;
   opacity:.85;
 }
-
 .date{
   margin-top:18px;
   color:#D8C19A;
@@ -79,7 +71,6 @@ h1{
   font-size:15px;
   opacity:.65;
 }
-
 button{
   margin-top:55px;
   padding:20px 60px;
@@ -93,13 +84,10 @@ button{
   font-family:'Cormorant Garamond', serif;
   transition:.3s ease;
 }
-
 button:hover{
   transform:translateY(-2px);
 }
-
-/* FLOATING HEARTS */
-
+/* HEARTS */
 .heart{
   position:absolute;
   color:#D8C19A;
@@ -107,7 +95,6 @@ button:hover{
   font-size:12px;
   animation:float 30s linear infinite;
 }
-
 @keyframes float{
   from{
     transform:translateY(0);
@@ -116,7 +103,6 @@ button:hover{
     transform:translateY(-130vh);
   }
 }
-
 .h1{left:8%;bottom:-20px;}
 .h2{left:18%;bottom:-150px;}
 .h3{left:32%;bottom:-220px;}
@@ -125,9 +111,7 @@ button:hover{
 .h6{left:92%;bottom:-200px;}
 .h7{left:58%;bottom:-260px;}
 .h8{left:42%;bottom:-180px;}
-
 /* INVITATION */
-
 #invitation{
   position:fixed;
   inset:0;
@@ -139,7 +123,6 @@ button:hover{
   visibility:hidden;
   transition:2s ease;
 }
-
 #invitation img{
   width:100%;
   max-width:800px;
@@ -148,21 +131,17 @@ button:hover{
   transform:scale(.92);
   transition:2.5s ease;
 }
-
 .show{
   opacity:1 !important;
   visibility:visible !important;
 }
-
 .show img{
   transform:scale(1) !important;
 }
-
 .hide{
   opacity:0;
   pointer-events:none;
 }
-
 .now-playing{
   position:fixed;
   bottom:20px;
@@ -171,6 +150,31 @@ button:hover{
   font-size:13px;
   opacity:.55;
   display:none;
+}
+/* MOBILE */
+@media (max-width:768px){
+  h1{
+    font-size:3rem;
+    width:92%;
+  }
+  .subtitle{
+    font-size:11px;
+    letter-spacing:5px;
+  }
+  .date{
+    font-size:13px;
+  }
+  button{
+    width:90%;
+    max-width:380px;
+    padding:18px 20px;
+    font-size:16px;
+    letter-spacing:3px;
+  }
+  #landing::before,
+  #landing::after{
+    font-size:70px;
+  }
 }
 </style>
 </head>
