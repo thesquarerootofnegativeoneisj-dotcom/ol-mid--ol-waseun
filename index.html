@@ -23,56 +23,57 @@ body{
   inset:0;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:center;
   text-align:center;
   background:#0D0D0D;
   z-index:100;
   transition:1.5s ease;
+  padding-top:120px;
 }
-/* Decorative flowers */
+/* Decorative Flowers */
 #landing::before,
 #landing::after{
   content:"❀";
   position:absolute;
   color:#B8893C;
-  opacity:.18;
+  opacity:.15;
   font-size:90px;
 }
 #landing::before{
-  top:30px;
-  left:30px;
+  top:40px;
+  left:25px;
 }
 #landing::after{
-  bottom:30px;
-  right:30px;
+  bottom:120px;
+  right:25px;
 }
 h1{
   color:#D8C19A;
-  font-size:clamp(2.5rem, 9vw, 4rem);
+  font-size:clamp(2.7rem, 8vw, 4rem);
   font-weight:600;
   line-height:1.1;
   letter-spacing:.5px;
-  width:90%;
-  margin:auto;
   text-shadow:none;
+  width:90%;
 }
 .subtitle{
-  margin-top:28px;
+  margin-top:35px;
   color:#D8C19A;
   letter-spacing:8px;
   font-size:13px;
-  opacity:.85;
+  opacity:.8;
 }
 .date{
   margin-top:18px;
   color:#D8C19A;
   letter-spacing:2px;
   font-size:15px;
-  opacity:.65;
+  opacity:.6;
 }
 button{
-  margin-top:55px;
+  margin-top:70px;
+  margin-bottom:80px;
   padding:20px 60px;
   border-radius:22px;
   border:1px solid #B8893C;
@@ -87,7 +88,7 @@ button{
 button:hover{
   transform:translateY(-2px);
 }
-/* HEARTS */
+/* FLOATING HEARTS */
 .heart{
   position:absolute;
   color:#D8C19A;
@@ -153,8 +154,11 @@ button:hover{
 }
 /* MOBILE */
 @media (max-width:768px){
+  #landing{
+    padding-top:140px;
+  }
   h1{
-    font-size:3rem;
+    font-size:3.2rem;
     width:92%;
   }
   .subtitle{
@@ -167,13 +171,15 @@ button:hover{
   button{
     width:90%;
     max-width:380px;
-    padding:18px 20px;
+    padding:20px;
     font-size:16px;
     letter-spacing:3px;
+    margin-top:60px;
+    margin-bottom:120px;
   }
   #landing::before,
   #landing::after{
-    font-size:70px;
+    font-size:65px;
   }
 }
 </style>
