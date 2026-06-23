@@ -101,8 +101,8 @@
     <div class="time">12:00 PM</div>
 
     <p>
-      Shórèmékún Street<br>
-      Abuja, Nigeria
+      29 Shórèmékún Street<br>
+      Lagos, Nigeria
     </p>
 
     <button class="music-btn" onclick="startMusic()">
